@@ -1,12 +1,6 @@
 name: Events Demo
-on:
-  push:
-    branches:
-      - main 
-      - 'releases/**'
-      - 'dev-*'  
-    paths:
-      - '/.github/workflows/*'
+on: [push, workflow_dispatch] #event - trigger
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
