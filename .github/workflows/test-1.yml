@@ -12,3 +12,8 @@ jobs:
         run: |
           echo "byebye",
           echo "section1"
+  second-job:
+    runs-on: ubuntu-latest #runner
+    steps:
+      - name: print welcome
+        run: echo "${{ toJson(github) }}"
