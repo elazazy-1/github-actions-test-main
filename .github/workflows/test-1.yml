@@ -2,19 +2,20 @@ name: test2 # workflow name
 on: [push, workflow_dispatch] #event - trigger
 
 jobs:
-  first-job:
-    runs-on: ubuntu-latest #runner
+  deploy:
+    runs-on: ubuntu-latest
     steps:
-      - name: print welcome
-        run: echo "Hello, world"
+      - name: Output event data
+        run: echo "${{ toJSON(github.event) }}"
 
-      - name: print Goodbye
-        run: |
-          echo "byebye",
-          echo "section1"
+      - name: Get code
+        uses: actions/checkout@v3
 
-  second-job:
-    runs-on: ubuntu-latest #runner
-    steps:
-      - name: print welcome
-        run: echo "${{ toJson(github) }}"
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Test code
+        run: npm  test
+
+      - name: Build code
+        run: npm  build
