@@ -15,7 +15,7 @@ jobs:
         run: npm ci
 
       - name: Test code
-        run: npm test -- --no-watch --no-progress --browsers=ChromeHeadless
+        run: npm test -- --no-watch  --browsers=ChromeHeadless
 
       - name: Build code
-        run: ng build
+        run: npm run build
