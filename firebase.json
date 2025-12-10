@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/github-actions-test-main/browser",
+    "public": "dist/hello-world-app/browser",
     "ignore": [
       "firebase.json",
       "**/.*",
