@@ -1,4 +1,4 @@
-name: myworkflow # workflow name
+name: test2 # workflow name
 on: [push, workflow_dispatch] #event - trigger
 
 jobs:
@@ -12,6 +12,7 @@ jobs:
         run: |
           echo "byebye",
           echo "section1"
+
   second-job:
     runs-on: ubuntu-latest #runner
     steps:
